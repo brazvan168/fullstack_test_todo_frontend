@@ -9,6 +9,10 @@ const App = () => {
   const addItem = (event) => {
     event.preventDefault()
 
+    if(!event.target.item.value) {
+      return false;
+    }
+
     const itemObject = {
       content: event.target.item.value,
       completed: false,

@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  /* margin: 0;
+  padding: 0; */
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2a2a2a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+#main-container {
+  background: #5b5b5b;
+  padding: 25px;
+  max-width: 550px;
+  border-radius: 8px;
+  color: #dadada;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#no-items {
+  font-size: 20px;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.list-item .list-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.list-item > span {
+  font-size: 20px;
+  word-break: break-all;
+}
+
+.list-item button {
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  color: #2a2a2a;
+  background: #eaeaea;
+}
+
+.list-item {
+  margin: 16px 0px;
+}
+
+#main-form {
+  display: flex;
+  gap: 16px;
+}
+
+#main-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #eaeaea;
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 8px;
+  color: #2a2a2a;
+}
+
+#main-form button {
+  padding: 8px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  color: #2a2a2a;
+  background: #eaeaea;
+}
+
+
+.checkbox-container {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  height: 46px;
+  width: 46px;
+  background-color: #eaeaea;
+  border-radius: 8px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #dddcdc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #303030;
+}
+
+.checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkmark:after {
+  left: 12px;
+  top: 5px;
+  width: 18px;
+  height: 26px;
+  border: solid #eaeaea;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(35deg);
+  -ms-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}

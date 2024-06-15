@@ -14,10 +14,11 @@ const ItemList = ({ items, setItems }) => {
   }
 
   return (
-    <ul>
-      {items.map(item => 
+    <ul className="item-list">
+      {items.map((item, index) => 
         <Item
           key={item.id}
+          index={index}
           item={item}
           toggleCompletion={() => toggleCompletionOf(item.id)}
           handleClick={() => deleteItem(item.id)}

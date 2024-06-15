@@ -1,8 +1,33 @@
-# React + Vite
+# To-Do Application - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of a basic to-do app built with React.
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* This project was built in order for me to showcase my React skills.
+* It is a simple to-do app, and so it contains some basic CRUD functionality.
+
+## Getting Started
+
+### Dependencies
+
+* Windows 10
+* Node v20.14.0 (LTS) with npm 10.7.0
+
+### Installing
+
+* Open up your terminal, navigate to the project's root directory and run:
+```
+npm install
+```
+
+### Running the app
+
+* Simply run the following command:
+```
+npm run dev
+```
+
+## Author
+
+Razvan Birisan

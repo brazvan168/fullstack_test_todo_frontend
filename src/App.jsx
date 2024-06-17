@@ -1,11 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect  } from 'react'
 import TextInput from './components/TextInput'
 import Button from './components/Button'
 import ItemList from './components/ItemList'
 import './index.css'
+import itemService from './services/items'
 
 const App = () => {
   const [items, setItems] = useState([])
+
+  useEffect(() => {
+    itemService
+      .getAll()
+      .then(initialItems => {
+        setItems(initialItems)
+      })
+      .catch(error => {
+        console.log('getAll fail', error)
+      })
+  }, [])
 
   const addItem = (event) => {
     event.preventDefault()
@@ -16,12 +28,18 @@ const App = () => {
 
     const itemObject = {
       content: event.target.item.value,
-      completed: false,
-      id: !items.length ? 1 : Math.max(...items.map(item => item.id)) + 1,
+      completed: false
     }
-  
-    setItems(items.concat(itemObject))
-    event.target.item.value = ''
+
+    itemService
+      .create(itemObject)
+      .then(returnedItem => {
+        setItems(items.concat(returnedItem))
+        event.target.item.value = ''
+      })
+      .catch(error => {
+        console.log('create fail', error)
+      })
   }
 
   return (

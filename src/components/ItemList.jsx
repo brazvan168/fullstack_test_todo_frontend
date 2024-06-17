@@ -1,4 +1,5 @@
 import Item from './Item'
+import itemService from '../services/items'
 
 const ItemList = ({ items, setItems }) => {
 
@@ -6,11 +7,25 @@ const ItemList = ({ items, setItems }) => {
     const item = items.find(n => n.id === id)
     const changedItem = { ...item, completed: !item.completed }
 
-    setItems(items.map(i => i.id !== id ? i : changedItem))
+    itemService
+      .update(id, changedItem)
+      .then(returnedItem => {
+        setItems(items.map(i => i.id !== id ? i : returnedItem))
+      })
+      .catch(error => {
+        console.log('update fail', error)
+      })
   }
 
   const deleteItem = (id) => {
-    setItems(items.filter(i => i.id !== id))
+    itemService
+      .remove(id)
+      .then(() => {
+        setItems(items.filter(i => i.id !== id))
+      })
+      .catch(error => {
+        console.log('remove fail', error)
+      })
   }
 
   return (
